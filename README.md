@@ -23,3 +23,22 @@ class animales{
 		document.write( "<br></br>");
 	document.write(perro2.info);
 
+
+class animal{
+
+	constructor(especie,color,raza){
+
+		this.especie=especie;
+		this.color=color;
+		this.raza=raza;
+
+		this.info= `la especie del perro es, ${especie}, el color es ${color}, y la raza es ${raza}`;
+
+
+
+	}
+}
+
+let perro = new animal("Husky Siberiano","negro","pitbul");
+
+document.write(perro.info);
