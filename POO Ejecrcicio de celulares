@@ -1,0 +1,99 @@
+class Celular{
+
+	constructor(color,peso,tamaño,rdc,ram){
+
+		this.color=color;
+		this.peso=peso;
+		this.tamaño=tamaño;
+		this.resoluciondecamara=rdc;
+		this.memoriaram=ram;
+		this.encendido=false;
+
+}
+		PresioneBotonEncendido(){
+
+			if(this.encendido==false){
+
+				alert("celular apagado");
+
+				this.encendido=true;
+
+			}else{
+
+				alert("celular prendido");
+				this.encendido=false;
+			}
+		}
+
+
+		tomarfoto(){
+
+
+			alert(`foto tomada en una resolucion  de camara ${this.resoluciondecamara}`);
+		
+        }
+
+
+		grabarvideo(){
+
+
+			alert(`el celular ppuede grabar ${this.resoluciondecamara}`);
+		
+
+		}
+
+		mobileInfo(){
+			
+
+			return`
+			color: <b>${this.color}</br></br>
+			peso: <b>${this.peso}</br></br>
+
+			tamaño <b>${this.tamaño}</br></br>
+			resoluciondecamara <b>${this.resoluciondecamara}</br></br>
+			memoriaram <b>${this.memoriaram}</br></br>;
+
+			`;
+
+		}
+
+
+}
+
+
+class CelularAG extends Celular{
+
+	constructor(color,peso,tamaño,rdc,ram,rdce){
+		super(color,peso,tamaño,rdc,ram,rdce);
+		this.resoluciondecamaraExtra=rdce;
+	}
+
+	grabarvideoLento(){
+
+		alert("estas grabando en camara lenta");
+	}
+
+	reconocimientoFacial(){
+
+		alert("vamos a reinciar un reconocimiento facial");
+	}
+
+	infoAltaGama(){
+
+		return this.mobileInfo()+`resolucion de camara Estra: ${this.resoluciondecamaraExtra}`;
+	}
+}
+
+//celular1 = new Celular("rojo","150gr","5pg","fullhd","2gb");
+
+//celular2 = new Celular("verde","155gr","5.4pg","fullhd","2gb");
+
+//celular3 = new Celular("gris","100gr","3.5pg","fullhd","4gb");
+
+celular1=new CelularAG("rojo","130gr","5.2pg","4k","3gb","full hd");
+celular2=new CelularAG("negro","200gr","6pg","4k","4gb", "hd");
+
+
+
+document.write(`${celular1.infoAltaGama()}
+				${celular2.infoAltaGama()}`);
