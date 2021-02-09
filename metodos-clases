@@ -1,0 +1,81 @@
+ class App{
+
+ 	constructor(Descargas,puntuacion,peso){
+
+ 		this.Descargas=Descargas;
+ 		this.puntuacion=puntuacion;
+ 		this.peso=peso;
+ 		this.iniciada=false;
+ 		this.instalada=false;
+ 		}
+ 		
+ 		instalar(){
+
+ 			if(this.instalada==false){
+ 				this.instalada=true;
+ 			alert("la app esta Instalada correctamente");
+ 			}
+ 		}
+
+ 		desinstalar(){
+
+ 			if(this.instalada==true){
+ 				this.instalada=false;
+ 			alert("la app esta desinstalada correctamente");
+ 			}
+ 		}
+ 		abrir(){
+
+ 			if(this.iniciada==false && this.instalada==true){
+ 				this.iniciada=true;
+ 			alert("la app esta abierta");
+ 			}
+ 		}
+
+ 		cerrar(){
+
+ 			if(this.iniciada==true && this.instalada==true){
+ 				this.iniciada=false;
+ 			alert("la app esta cerrada");
+ 			}
+ 		}
+
+ 		appInfo(){
+
+ 			return `
+ 			 Descargar:<b>${this.Descargas} </br></br>
+ 			puntuacion: <b>${this.puntuacion}</br></br>
+ 			peso: <br>${this.peso}</br></br>`;
+ 			
+
+
+
+ 		}
+ 	}
+ 
+
+
+ app=new App("100","7.6","300mg");
+
+ app1=new App("16000","7 estrella","300mg");
+
+ app2=new App("16000","5estrella","300mg");
+
+ app3=new App("16000","4.6 estrella","300mg");
+
+ app4=new App("16000","3.6 estrella","300mg");
+
+ app5=new App("16000","2.6 estrella","300mg");
+
+ app6=new App("16000","1.6 estrella","300mg");
+
+document.write(`
+					${app.appInfo()}<br>
+					${app1.appInfo()}<br>
+					${app2.appInfo()}<br>
+					${app3.appInfo()}<br>
+					${app4.appInfo()}<br>
+					${app5.appInfo()}<br>
+					${app6.appInfo()}<br>
+					`)
+
